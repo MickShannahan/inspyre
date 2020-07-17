@@ -11,7 +11,8 @@ class TodoService {
   getTodos() {
     console.log("Getting the Todo List");
     todoApi.get().then(res => {
-      res.data.map(task => new Todo(task))
+      _store.commit('todos', res.data.data.map(task => new Todo(task)))
+      console.log("updated todos from get", _store.State.todos);
     }).catch(err => console.error(err));
   }
 
@@ -23,6 +24,21 @@ class TodoService {
     //TODO Handle this response from the server (hint: what data comes back, do you want this?)
   }
 
+  toggleTask(taskId) {
+    let task = _store.State.todos.find(task => task._id == taskId)
+    console.log(task);
+    console.log(_store.State.todos);
+    task.completed == false ? task.completed = true : task.completed == true ? task.completed = false : console.log("some how the task was neighter true or false");
+    todoApi.put(task._id, task).then(res => {
+      console.log(res);
+    })
+  }
+  deleteTask(taskId) {
+    todoApi.delete(taskId).then(res => {
+      let newList = _store.State.todos.filter(task => task._id != taskId)
+      _store.commit('todos', newList)
+    }).catch(err => console.error(err))
+  }
   toggleTodoStatusAsync(todoId) {
     let todo = _store.State.todos.find(todo => todo._id == todoId);
     //TODO Make sure that you found a todo,

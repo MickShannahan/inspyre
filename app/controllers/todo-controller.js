@@ -3,12 +3,17 @@ import Todo from "../models/todo.js"
 import _store from "../store.js";
 
 //TODO Create the render function
-function _drawTodos() { }
+function _drawTodos() {
+  let template = ''
+  _store.State.todos.forEach(task => template += task.Template)
+  document.getElementById('tasks').innerHTML = template
+}
 
 export default class TodoController {
   constructor() {
-    //TODO Remember to register your subscribers
+    _store.subscribe('todos', _drawTodos)
     TodoService.getTodos();
+    _drawTodos()
   }
 
   addTask(event) {
@@ -19,8 +24,15 @@ export default class TodoController {
       description: form
     }
     TodoService.addTask(new Todo(todo))
+  }
 
-    // TodoService.addTodoAsync(todo);
+  toggleTask(taskId) {
+    TodoService.toggleTask(taskId)
+    _drawTodos()
+  }
+
+  deleteTask(taskId) {
+    TodoService.deleteTask(taskId)
   }
 
   //NOTE This method will pass an Id to your service for the TODO that will need to be toggled
