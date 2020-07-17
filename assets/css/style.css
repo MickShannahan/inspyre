@@ -1,0 +1,16 @@
+#todo-error{
+  color: red;
+  font-size: 2em;
+}
+
+.full-heigiht{
+  min-height: 100vh;
+}
+
+.text-shadow{
+  text-shadow: rgb(0, 0, 0) 1px 0 20px;
+}
+
+.bg-shade{
+  background-color: rgba(0, 0, 0, .80);
+}
