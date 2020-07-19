@@ -9,7 +9,16 @@ const _quoteApi = axios.create({
 });
 
 //TODO create methods to retrieve data trigger the update window when it is complete
-class QuoteService { }
+class QuoteService {
+
+  getQuote() {
+    _quoteApi.get("").then(res => {
+      console.log(res.data);
+      _store.commit('quotes', new Quote(res.data.quote))
+      console.log(_store.State);
+    }).catch(err => console.error(err))
+  }
+}
 
 const quoteService = new QuoteService();
 export default quoteService;

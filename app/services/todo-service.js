@@ -26,11 +26,11 @@ class TodoService {
 
   toggleTask(taskId) {
     let task = _store.State.todos.find(task => task._id == taskId)
-    console.log(task);
-    console.log(_store.State.todos);
+    // console.log(task);
+    // console.log(_store.State.todos);
     task.completed == false ? task.completed = true : task.completed == true ? task.completed = false : console.log("some how the task was neighter true or false");
     todoApi.put(task._id, task).then(res => {
-      console.log(res);
+      // console.log(res);
     })
   }
   deleteTask(taskId) {

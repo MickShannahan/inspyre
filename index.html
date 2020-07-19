@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/style.css">
 
 	<style>
@@ -26,20 +27,38 @@
 
 
 	<header>
-		<div class="row my-2 justify-content-between text-light text-shadow">
-			<div class="col-3">search</div>
-			<div class="col-1 text-right">
-				weather go here
+		<div class="row my-2 justify-content-end text-light text-shadow">
+			<div class="col-2"></div>
+			<div class="col-3 text-right">
+				<div id="weather" class="row justify-content-center ">
+					<!-- WEATHER GOES HERE -->
+					<div class="col-8  pt-3 pr-1 text-right">Icon</div>
+					<h1 class="col-1 px-0 pt-2 pl-1 pr-4 mr-2">78</h1>
+					<div class="col-2 px-0 text-left pl-3">
+						<div class="row">
+							<div class="col-12 pt-2 pr-0">68</div>
+							<div class="col-12 pb-5 pr-0">°f</div>
+						</div>
+					</div>
+					<!-- WEATHER GOES HERE -->
+				</div>
 			</div>
 		</div>
 	</header>
 
-	<main class="row">
+	<main class="row full-height justify-content-center align-items-center">
+		<div class="col-8 text-center">
+			<div id="clock" class="row">
+				<h1 id="large-clock" class="col-12">10:00</h1>
+				<h5 class="col-12 clock-type">the day and date</h5>
+			</div>
+		</div>
 	</main>
 
 	<footer>
 		<div class="row fixed-bottom mb-5 justify-content-end">
-			<div id="todo-list" class="col-3 collapse text-light todo-card bg-shade mb-1 mr-5">todo list
+			<div id="todo-list" class="col-3 collapse text-light todo-card bg-shade mb-2 mr-5 mb-5"><span
+					id="todo-message"></span>
 				<div class="row justify-content-center">
 					<!-- FORM ENTRY -->
 
@@ -66,12 +85,20 @@
 				</div>
 			</div>
 		</div>
-		<div class="row fixed-bottom m-2 justify-content-between text-light text-shadow">
-			<div class="col-2">enter user</div>
-			<col-6>the inspirational quote</col-6>
+		<div class="row fixed-bottom justify-content-end m-5 p-2">
 			<div class="col-1 text-right p-0">
-				<button class="btn bg-shade rounded-pill text-light" data-toggle="collapse"
+				<button id="todo-button" class="btn btn-dark bg-shade rounded-pill text-light" data-toggle="collapse"
 					data-target="#todo-list">todos</button>
+			</div>
+		</div>
+		<div class="col-8">
+			<div class="row fixed-bottom m-2 justify-content-center text-light text-shadow">
+				<div class="col-8 text-shadow">
+					<div id="quotes" class="row">
+						<!-- QUOTES GO HERE -->
+
+					</div>
+				</div>
 			</div>
 		</div>
 	</footer>

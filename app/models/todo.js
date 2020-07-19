@@ -13,9 +13,9 @@ export default class Todo {
   get Template() {
     return `
               <div class="row">
-							<div class="col-9">${this.description}</div>
-							<button onclick="app.todoController.toggleTask('${this._id}')" class="col-1 btn btn-outline-light text-center${this.completed == true ? ' bg-completed' : ''}">O</button>
-              <button onclick="app.todoController.deleteTask('${this._id}')" class="col-1 btn btn-outline-danger text-center">X</button>
+							<div class="col ${this.completed == true ? ' cross-out' : ''}">${this.description}</div>
+							<button onclick="app.todoController.toggleTask('${this._id}')" class="col-2 btn btn-outline-light text-center${this.completed == true ? ' bg-completed' : ''}"><i class="fa fa-check"></i></button>
+              <button onclick="app.todoController.deleteTask('${this._id}')" class="col-2 btn btn-outline-danger text-center"><i class="fa fa-times"></i></button>
               </div>
     `
   }

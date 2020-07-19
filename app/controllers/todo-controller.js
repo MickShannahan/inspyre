@@ -1,12 +1,20 @@
 import TodoService from "../services/todo-service.js";
 import Todo from "../models/todo.js"
 import _store from "../store.js";
+import { generateTodoPhrase } from "../utils.js"
 
 //TODO Create the render function
 function _drawTodos() {
+  let todosLeft = 0
   let template = ''
   _store.State.todos.forEach(task => template += task.Template)
   document.getElementById('tasks').innerHTML = template
+
+  _store.State.todos.forEach(task => {
+    task.completed == false
+    todosLeft += 1
+  })
+  document.getElementById('todo-message').innerText = generateTodoPhrase() + ": " + todosLeft + ' left'
 }
 
 export default class TodoController {
@@ -19,7 +27,7 @@ export default class TodoController {
   addTask(event) {
     event.preventDefault();
     let form = event.target.newTask.value;
-    console.log(form);
+    // console.log(form);
     let todo = {
       description: form
     }

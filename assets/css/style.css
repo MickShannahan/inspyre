@@ -3,8 +3,17 @@
   font-size: 2em;
 }
 
-.full-heigiht{
-  min-height: 100vh;
+.full-height{
+  min-height: 60vh;
+
+}
+
+.hidden{
+  /* display: none; */
+}
+
+.cross-out{
+  text-decoration: line-through;
 }
 
 .todo-card{
@@ -18,9 +27,77 @@
 }
 
 .bg-shade{
-  background-color: rgba(0, 0, 0, .80);
+  background-color: rgba(39, 39, 39, 0.65);
+  backdrop-filter: blur(4px);
 }
 
 .bg-completed{
-  background-color: rgba(255, 245, 158, 0.7); 
+  background-color: rgba(202, 255, 158, 0.7); 
+}
+
+#large-clock{
+  mix-blend-mode: exclusion;
+  mix-blend-mode: screen;
+  font-size: 12em;
+  color: rgba(255, 255, 255, 0.7);
+  filter: blur(1px);
+  /* backdrop-filter: blur(5px); */
+  text-shadow: rgba(122, 122, 122, 0.4) 1px 0 10px;
+}
+
+.clock-type{
+  mix-blend-mode: exclusion;
+  mix-blend-mode: screen;
+  font-size: 3em;
+  color: rgba(255, 255, 255, 0.65);
+  filter: blur(1px);
+  /* backdrop-filter: blur(5px); */
+  text-shadow: rgba(122, 122, 122, 0.4) 1px 0 10px;
+
+  /* backdrop-filter: blur(5px); */
+  text-shadow: rgba(122, 122, 122, 0.4) 1px 0 10px;
+}
+#todo-button{
+  position: inherit;
+  z-index: 1000!important;
+}
+
+#quote-body:hover {
+  color:transparent;
+  text-shadow: transparent;
+  transform: translate(0, -1em);
+}
+
+
+#quote-body:hover + #quote-author {
+  display: flex;
+  color: rgb(255, 255, 255);
+  transform: translate(50%, -100%);
+  text-shadow: rgb(0, 0, 0) 1px 0 20px;
+}
+
+#quote-author{
+  display: flex;
+  position: relative;
+  justify-self: center;
+  transform: translate(50%, 0);
+  color: transparent;
+  text-shadow: transparent;
+  transition: all .7s ease ;
+}
+
+#quote-body{
+  color: rgb(255, 255, 255);
+  text-shadow: rgb(0, 0, 0) 1px 0 20px;
+  transition: all .7s ease ;
+}
+
+#temp{
+  transition: all .5s ease;
+}
+
+#temp:hover{
+  color: black!important;
+  text-shadow: rgba(245, 245, 245, 100%) 0px 0 5px!important;
+  
 }

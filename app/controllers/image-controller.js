@@ -5,7 +5,7 @@ import _store from "../store.js"
 
 function _drawBackground() {
   document.body.style.backgroundImage = `url(${_store.State.images.url})`;
-  document.body.style.backgroundSize = `100vw, auto`
+  document.body.style.backgroundSize = `100vw, cover`
   console.log('drawbackground ran');
 }
 

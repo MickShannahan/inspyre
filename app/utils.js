@@ -10,3 +10,11 @@ export const generateId = function () {
   }
   return result;
 };
+
+
+export const generateTodoPhrase = function () {
+  let result = '';
+  let choices = ["Where to begin ", "Down to business ", "Time to work", "One at a time ", "Todays todos"]
+  result = choices[Math.floor(Math.random() * choices.length)]
+  return result
+}
