@@ -1,7 +1,7 @@
 import Weather from "./models/weather.js";
 import Image from "./models/image.js";
-import Quote from "./models/Quote.js";
-import Todo from "./models/Todo.js";
+import Quote from "./models/quote.js";
+import Todo from "./models/todo.js";
 
 
 
