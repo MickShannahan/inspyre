@@ -8,7 +8,7 @@
    position: fixed;
    top: -2em;
    left: -2em ;
-   z-index: 1000;
+   z-index: 10000000;
    background-color: black;
    transition-delay: 400ms;
    transition: all 300ms ease;
