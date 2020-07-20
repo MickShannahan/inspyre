@@ -11,8 +11,10 @@ function _drawTodos() {
   document.getElementById('tasks').innerHTML = template
 
   _store.State.todos.forEach(task => {
-    task.completed == false
-    todosLeft += 1
+    if (task.completed == false) {
+
+      todosLeft += 1
+    }
   })
   document.getElementById('todo-message').innerText = generateTodoPhrase() + ": " + todosLeft + ' left'
 }
