@@ -41,8 +41,12 @@
   font-size: 12em;
   color: rgba(255, 255, 255, 0.7);
   filter: blur(1px);
-  /* backdrop-filter: blur(5px); */
+  /* backdrop-filter: blur(10px); */
   text-shadow: rgba(122, 122, 122, 0.4) 1px 0 10px;
+}
+
+#large-clock{
+ color: backdrop-filter(blur(5px));
 }
 
 .clock-type{
