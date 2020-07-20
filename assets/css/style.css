@@ -2,6 +2,17 @@
   color: red;
   font-size: 2em;
 }
+ #load-shade{
+   min-width: 120vw;
+   min-height: 120vh;
+   position: fixed;
+   top: -2em;
+   left: -2em ;
+   z-index: -1;
+   background-color: black;
+   transition-delay: 500ms;
+   transition: all 1s ease;
+ }
 
 .full-height{
   min-height: 60vh;
@@ -44,11 +55,8 @@
   /* backdrop-filter: blur(10px); */
   text-shadow: rgba(122, 122, 122, 0.4) 1px 0 10px;
 }
-
-#large-clock{
- color: backdrop-filter(blur(5px));
-}
-
+  
+  
 .clock-type{
   mix-blend-mode: exclusion;
   mix-blend-mode: screen;

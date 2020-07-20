@@ -24,7 +24,7 @@ export default class Time {
     let minute = this.minutes
     let hour = this.hours
     let amPm = ''
-    if (this.minutes.length < 2) {
+    if (this.minutes < 10) {
       minute = '0' + this.minutes
     }
     if (this.hours > 12) {
