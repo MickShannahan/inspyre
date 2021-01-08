@@ -74,14 +74,14 @@
   z-index: 1000!important;
 }
 
-#quote-body:hover {
+#quotes:hover #quote-body {
   color:transparent;
   text-shadow: transparent;
   transform: translate(0, -1em);
 }
 
 
-#quote-body:hover + #quote-author {
+#quotes:hover  #quote-author {
   display: flex;
   color: rgb(255, 255, 255);
   transform: translate(50%, -100%);
