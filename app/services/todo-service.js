@@ -1,5 +1,5 @@
-import Todo from "../models/todo.js"
-import _store from "../store.js"
+import Todo from "../models/todo.js";
+import _store from "../store.js";
 
 // @ts-ignore
 const todoApi = axios.create({
@@ -11,7 +11,7 @@ class TodoService {
   getTodos() {
     console.log("Getting the Todo List");
     todoApi.get().then(res => {
-      _store.commit('todos', res.data.data.map(task => new Todo(task)))
+      _store.commit('todos', res.data.map(task => new Todo(task)))
       console.log("updated todos from get", _store.State.todos);
     }).catch(err => console.error(err));
   }
